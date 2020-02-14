@@ -2,16 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import PlayerCard from './components/PlayerCard';
-import { useDarkMode } from './hooks/useDarkMode';
+import Header from './components/Header';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       players: [],
-      darkMode: false,      
-    };
-    const [useDark, toggleDark] = useDarkMode(); 
+      darkMode: false,
+    };    
   }
 
   componentDidMount(){
@@ -32,7 +31,7 @@ class App extends React.Component {
      
     return (
       <div className="App">
-        <button onClick={toggleDark}>Toggle Dark Mode</button>
+        <Header />
         {this.state.players.map(player => {
           return (
             <PlayerCard key={player.id} name={player.name} country={player.country} searches={player.searches}/>
