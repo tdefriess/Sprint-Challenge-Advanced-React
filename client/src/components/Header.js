@@ -11,7 +11,7 @@ const Header = () => {
         <div>
             <nav>
                 <h1>Players of Some Sport or Other</h1>
-                <button onClick={toggleDark}>Toggle Dark Mode</button>
+                <button data-testid='button' onClick={toggleDark}>Toggle Dark Mode</button>
             </nav>
         </div>
     )
